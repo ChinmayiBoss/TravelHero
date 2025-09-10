@@ -24,9 +24,9 @@ jobs:
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v0.1.10
         with:
-          host: ${{ SSH_HOST }}        
-          username: ${{ SSH_USERNAME }}    
-          key: ${{ SSH_PRIVATE_KEY }}          
+          host: ${{ secrets.SSH_HOST }}        
+          username: ${{ secrets.SSH_USERNAME }}    
+          key: ${{ secrets.SSH_PRIVATE_KEY }}          
           script: |
             cd ~/TravelHero || exit 1
             git fetch --all
